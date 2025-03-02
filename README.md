@@ -58,7 +58,7 @@ Factor generation and testing for systematic trading strategy.
     - Download the results as a .csv file
     - Save the file in `data/raw` folder as `closing_prices.csv`
 3. Fetch sage factors 
-    - Copy paste code from this [file](sql/fetch_price_close_usd.sql) and run
+    - Copy paste code from this [file](sql/fetch_sage_factors.sql) and run
     - Verify there are 124.1K rows 
     - Download the results as a .csv file
     - Save the file in `data/processed` folder as `sage_factors.csv`
@@ -84,10 +84,12 @@ Factor generation and testing for systematic trading strategy.
 Run the code cells in this [notebook](notebooks/data_analyses/regression.ipynb)
 
 ## Future Steps (Ranked by importance)
+- Get 13F Filings 
+    - WRDS has it, will pull 
 - Create a sector wide momentum metric 
     - Returns or # of companies that exist over time
     - Will tell you about state of regulatory environemnt or biotech landscape
-- Get short interest data 
+- Couple short interest data with other varaibles like institutional holdings, modalities, and indications
     - Put/Call Ratio Data See how much speculation there is 
     - Derivatives before FDA approval 
 - Gather number of fda drugs approved in each modality/indication over time for each quarter 
