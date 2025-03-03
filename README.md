@@ -52,21 +52,31 @@ Factor generation and testing for systematic trading strategy.
     - Navigate to `Projects` and create new SQL Worksheet
     - Select `Intern` for `Role` and `COMPUTE_WH` for `Run on Warehouse`
     - Select `BIOTECH_PROJECT` for `Databases` and `READ_ONLY` for `Schemas`
-2. Fetch closing price data 
+2. Closing prices 
     - Copy paste code from this [file](sql/fetch_price_close_usd.sql) and run
     - Verify there are 334.8K rows 
     - Download the results as a .csv file
     - Save the file in `data/raw` folder as `closing_prices.csv`
-3. Fetch sage factors 
+3. Sage factors 
     - Copy paste code from this [file](sql/fetch_sage_factors.sql) and run
     - Verify there are 124.1K rows 
     - Download the results as a .csv file
     - Save the file in `data/processed` folder as `sage_factors.csv`
-3. Fetch modalities and indications 
+3. Modalities and indications 
     - Copy paste code from this [file](sql/fetch_price_close_usd.sql) and run
     - Verify there are 1.7K rows 
     - Download the results as a .csv file
     - Save the file in `data/raw` folder as `mod_ind.csv`
+4. Non-derivative insider transactions 
+    - Copy paste code from this [file](sql/fetch_non_derivative_transactions.sql) and run
+    - Verify there are 255.4K rows 
+    - Download the results as a .csv file
+    - Save the file in `data/raw` folder as `ndt.csv`
+5. Market Cap
+    - Copy paste code from this [file](sql/fetch_market_cap.sql) and run
+    - Verify there are 143.3K rows 
+    - Download the results as a .csv file
+    - Save the file in `data/raw` folder as `market_cap.csv`
 
 ## Generate Factors 
 0. Set-up Jupyter notebooks 
@@ -79,6 +89,9 @@ Factor generation and testing for systematic trading strategy.
 2. Modality + Indication Momentum 
     - Run all the code cells in this [notebook](notebooks/data_processing/mod_ind_momentum.ipynb)
     - It will output the file `data/processed/mod_ind_momentum.csv`
+3. Residualized Short-Interest
+    - Run all the code cells in this [notebook](notebooks/data_processing/short_interest_residualization.ipynb)
+    - It will output the file `data/processed/residualized_short_interest.csv`
 
 ## Run Regression
 Run the code cells in this [notebook](notebooks/data_analyses/regression.ipynb)
